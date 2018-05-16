@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+board {
+    margin: 5px 25%;
+}
+.row {
+    width: 800px;
+    height: 100px;
+    font-size: 0;
+}
+.cell {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    font-size: 70px;
+}
+.row:nth-child(odd) .cell:nth-child(odd){
+    background-color: rgba(0, 0, 0, 0.425)
+}
+.row:nth-child(even) .cell:nth-child(even){
+    background-color: rgba(0, 0, 0, 0.425)
+}

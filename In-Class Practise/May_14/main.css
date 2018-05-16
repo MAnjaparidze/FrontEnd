@@ -1,0 +1,66 @@
+*{
+    color: red;
+}
+h2{
+    color: blue;
+}
+#myItem1{
+    color: green;
+}
+.myItem{
+    color: mistyrose;
+}
+li.myItem{
+    color: mediumorchid;
+}
+span.myItem{
+    color: mediumturquoise;
+}
+[data-model="open"]{
+    background-color: rebeccapurple;
+    padding: 13px;
+    color: white;
+}
+ul.menu > li {
+    display: inline-block;
+    padding: 10px;
+}
+
+ul.menu > li:first-child {
+    font-size: 20px;
+    font-weight: 700;
+}
+ul.menu > li:last-child a {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+ul.menu > li:nth-child(2) a {
+    font-size: 20px;
+    font-weight: 700;
+    color: lime;
+}
+ul.menu > li:nth-child(2n + 1) a {
+    font-size: 20px;
+    font-weight: 700;
+    color: brown;
+}
+/* .myclass:empty {
+}
+*/
+
+/* p + p {
+
+} */
+#par_1 ~ p {
+    cursor: pointer;
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+}
+#par_1 ~ p:hover {
+    background-color: rgba(0, 0, 255, 0.671)
+}
+#par_1 ~ p:active {
+    background-color: rgba(255, 0, 0, 0.671)
+}

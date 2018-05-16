@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+
+        }
+
+        th,
+        td {
+            padding: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr style="text-align: center">
+                <th>Control Type</th>
+                <th>Data</th>
+                <th>Control</th>
+            </tr>
+            <tr>
+                <td>Text Box</td>
+                <td>Name:</td>
+                <td>
+
+                    <input type="text" name="username" id="username" placeholder="Enter name" required>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>Password:</td>
+                <td>
+
+                    <input type="password" name="password" id="password" required>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Text area</td>
+                <td>Address:</td>
+                <td>
+
+                    <textarea name="Address" id="Address" style="resize: vertical" placeholder="Enter Address" required></textarea>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Drop down list</td>
+                <td>Area:</td>
+                <td>
+
+                    <select name="Area" id="Area">
+                        <option value="" selected >Center</option>
+                        <option value="">Downtown</option>
+                        <option value="">Uptown</option>
+                        <option value="">Outskirts</option>
+                        <option value="">Other</option>
+                    </select>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Check box</td>
+                <td>Hobbies:</td>
+                <td>
+
+                    <input type="checkbox" name="hobbie" value="Sport">Sport
+                    <br>
+                    <input type="checkbox" name="hobbie" value="Reading"> Reading
+                    <br>
+                    <input type="checkbox" name="hobbie" value="T.V"> T.V
+                    <br>
+                    <input type="checkbox" name="hobbie" value="Internet"> Internet
+                    <br>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Radio Buttons</td>
+                <td>Gender:</td>
+                <td>
+                    <fieldset>
+                        <legend>Gender selection</legend>
+                        <input type="radio" name="Gender"checked> Male
+                        <br>
+                        <input type="radio" name="Gender"> Female
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>File upload</td>
+                <td>Your Image:</td>
+                <td>
+                    <input type="file" name="imgLink" id="imgLink" placeholder="No file chosen">
+                </td>
+            </tr>
+            <tr>
+                <td>Buttons</td>
+                <td>Actions:</td>
+                <td>
+
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                    <input type="button" value="Button" onclick="alert('Click Me Harder Senpai ^ o ^')">
+
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

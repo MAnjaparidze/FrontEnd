@@ -1,0 +1,31 @@
+body {
+    /* 
+    background-color: #ff0000a4;
+    background-color: rgba(255, 0, 0, 0.9);
+    background-image: url(../Images/bricks.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right 100px; 
+    */
+    background: rgba(255, 0, 0, 0.9) url(../Images/bricks.png) no-repeat scroll right top;
+    background-size: cover;
+    /* იგივე რაც მაღლა, უბრალოდ ერთ ხაზში */
+    /* margin-left: 100px; */
+}
+.box {
+    width: 200px;
+    height: 200px;
+    background: blueviolet;
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    line-height: 200px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 10px 20px 30px 40px; /* ყველა მხრიდან წევს შიგნით Content-ს */
+    border: 5px solid grey;
+    outline: 5px solid green;
+    /* padding-bottom: 20px; */
+    /* padding-top: 20px; */
+    /* vertical-align: middle; */ 
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/register" method="GET">
+        <!-- POST ის შემთხვევაში URL არ ჩანს, GET ზე კი. -->
+        Firstname:
+        <input type="text" name="firstname" required>
+        <br><br>
+        <!-- 
+            value="Jano" readonly მხოლოდ
+            წაკითხვის ფუნქცია და არა რედაქტირების
+        -->
+        Lastname:
+        <input type="text" name="lastname" required>
+        <br><br>
+        <!-- disabled placeholder="lastname" მინიშნება 
+            maxlength="10" შეზღუდული სიმბოლოების რაოდენობა
+        -->
+
+    </form>
+    <hr>
+    <form action="/register" method="POST">
+        <!-- readonly -->
+        <label for="Username">Username:</label>
+        <input type="Text" name="Username" placeholder="Username" id="Username" required>
+        <br><br>
+        <!-- disabled -->
+        <label for="Password">Password:</label>
+        <input type="Password" name="Password" placeholder="Password" id="Password" required>
+        <br><br>
+
+        <input type="submit" value="Login">
+        <input type="reset" value="Reset fields">
+        <br><br>
+
+        <label for="Comment"> Comment: </label>
+        <textarea name="Comment" id="" cols="100" rows="5" style="resize:none" id="Comment"></textarea>
+        <br><br>
+
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other" checked> Other
+        <br><br>
+
+        <fieldset>
+            <legend>Cars</legend>
+            <input type="checkbox" name="Bike" id="Bike"> I have a bike
+            <input type="checkbox" name="Car" id="Car"> I have a car
+
+        </fieldset>
+        <br><br>
+        
+        <select name="Cars" id="Cars" >
+        <!-- size="3", cars[], multiple - საზღვრავს ჩამონათვლის სიდიდეს -->
+        <option value="" selected>--SELECT CARS--</option>
+            <option value="bmw">BMW</option>
+            <option value="vw">VW</option>
+            <option value="maserati">Maserati</option>
+            <option value="pagani">Pagani</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Login</button>
+        <button type="reset">Reset Fields</button>
+        <button type="button" onclick="alert('Hello Mother Fucker')">Click me</button>
+        <!-- 
+            label გამოიყენება დაწკაპებით, საჭირო Field-ში გადასასვლელად
+            required გამოიყენება აუცილებელი Field-ების აღსანიშნად
+            radio გამოიყენება სქესის ჩამონათვლის არჩევისას 
+            selected გამოიყენება იმის საჩვენებლად თუ რა გამოჩნდება პირველი
+        -->
+    </form>
+</body>
+
+</html>

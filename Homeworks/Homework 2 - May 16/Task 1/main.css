@@ -1,0 +1,49 @@
+﻿.Circle1 {
+    height: 180px;
+    width: 180px;
+    background: red;
+    border-radius: 50%;
+    display: inline-block;
+}
+.Circle2 {
+    height: 180px;
+    width: 180px;
+    background: blue;
+    border-radius: 50%;
+    display: inline-block;
+}
+.Circle3 {
+    height: 180px;
+    width: 180px;
+    background: yellow;
+    border-radius: 50%;
+    display: inline-block;
+}
+.Circle4 {
+    height: 180px;
+    width: 180px;
+    background: green;
+    border-radius: 50%;
+    display: inline-block;
+}
+.Square {
+    height: 360px;
+    width: 360px;
+    background: black;
+    margin-left: 190px;
+}
+.Circle1:hover ~ .Square {
+    background: red;
+    }
+.Circle2:hover ~ .Square {
+    background: blue;
+}
+.Circle3:hover ~ .Square {
+    background: yellow;
+
+}
+.Circle4:hover ~ .Square {
+    background: green;
+
+}
+ 
