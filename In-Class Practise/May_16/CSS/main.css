@@ -1,3 +1,6 @@
+[hidden] {
+    display: none;
+}
 body {
     /* 
     background-color: #ff0000a4;
@@ -7,16 +10,18 @@ body {
     background-attachment: fixed;
     background-position: right 100px; 
     */
-    background: rgba(255, 0, 0, 0.9) url(../Images/bricks.png) no-repeat scroll right top;
+    /* background: rgba(255, 0, 0, 0.9) url(../Images/bricks.png) no-repeat scroll right top; */
     background-size: cover;
     /* იგივე რაც მაღლა, უბრალოდ ერთ ხაზში */
     /* margin-left: 100px; */
 }
 .box {
+    display: block; /* თუ გვინდა რომ content არ გამოჩდნეს */
+    /* visibility: hidden; - იგივეს აკეთებს რასაც display მაგრამ ეს ადგილს მაინც იკავებს */
     width: 200px;
     height: 200px;
     background: blueviolet;
-    font-size: 2em;
+    font-size: 2em; /* em ადიდებს ფონტს სტანდარტზე 2-ჯერ დიდად */
     color: #fff;
     text-align: center;
     line-height: 200px;
@@ -28,4 +33,40 @@ body {
     /* padding-bottom: 20px; */
     /* padding-top: 20px; */
     /* vertical-align: middle; */ 
+}
+p.box--border__style {
+    border: 10px solid #fc5;
+    border-style: outset;
+    border-width: 10px;
+    border-color: red green yellow blue;
+    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /* solid; dashed; dotted; double; groove; ridge; inset; */
+    padding: 13px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#border-box,
+#padding-box,
+#content-box {
+    background-color: yellowgreen;
+    width: 225px;
+    padding: 1em 0;
+    border: 5px solid rgba(156, 144, 231, 0.6)
+}
+
+.nomargin {
+    margin: 0;
+}
+#border-box {
+    background-clip: border-box;
+}
+#padding-box {
+    background-clip: padding-box;
+}
+#content-box {
+    background-clip: content-box;
 }

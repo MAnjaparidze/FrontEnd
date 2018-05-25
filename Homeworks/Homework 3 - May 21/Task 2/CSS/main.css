@@ -1,0 +1,32 @@
+body {
+    background-color: forestgreen;
+}
+div.main {
+    display: table;
+    text-align: center;
+    width: 100%;
+}
+div.gallery {
+    display: table-cell;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    margin: 5px;
+    border: 2px solid grey;
+    float: left;
+    width: 350px;
+}
+
+div.gallery:hover {
+    border: 2px solid black;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}

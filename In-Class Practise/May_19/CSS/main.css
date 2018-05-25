@@ -1,0 +1,80 @@
+body {
+    color: blue;
+}
+
+h1 {
+    color: rgb(72, 255, 0);
+}
+
+h2.left {
+    text-align: left;
+}
+
+h2.center {
+    text-align: center;
+}
+
+h2.right {
+    text-align: right;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blueviolet;
+}
+div {
+    border: 1px solid #000;
+    padding: 10px;
+    width: 300px;
+    height: 200px;
+    text-align: justify;
+}
+
+h2.overline {
+    text-decoration: overline;
+    text-align: center;
+}
+
+h2.linethrough {
+    text-decoration: line-through;
+    text-align: center;
+}
+
+h2.underline {
+    text-decoration: underline;
+    text-align: center;
+}
+
+p.rtl {
+    direction: rtl;
+}
+
+/* Pseudo Elements */
+.elements {
+    width: 200px;
+    height: 200px;
+    background-color: cornflowerblue;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 200px;
+
+    margin-bottom: 200px;
+}
+
+.elements::before { /* .elements:hover::before */
+    content: "HTML5";
+    width: 100%;
+    height: 100%;
+    color: red;
+}
+
+.elements::after {  /* .elements:hover::after */
+    content: "JS(E36)";
+    width: 100%;
+    height: 100%;
+    color: blue;
+}
