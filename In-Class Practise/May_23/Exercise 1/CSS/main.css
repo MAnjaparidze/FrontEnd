@@ -1,0 +1,49 @@
+header {
+    background-color: darkgray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+h1 {
+    color: white;
+}
+aside {
+    float: left;
+    width: 15%; 
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    background-color:rgba(0, 183, 255,0.4);
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+    
+}
+footer {
+    background-color: darkgray;
+    clear: both;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+li:hover {
+    font-size: 120%;
+    background-color: rgba(0, 183, 255,0.9);
+}
+.main {
+    width: 1200px;
+    margin: 0 auto;
+}
+.article {
+    width: 82%;
+    float: right;
+}
