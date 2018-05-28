@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transitions</title>
+    <style>
+        div.transition {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            background-color: springgreen;
+            /* transition-delay:  */
+            transition-property: all;
+            transition-duration: 400ms;
+            transition-timing-function: cubic-bezier(.52, .53, .52, .53);
+            cursor: pointer;
+        }
+
+        div.transition:hover {
+            background-color: seagreen;
+            transform: translate(200px, 200px) scale(2, 2);
+            width: 200px;
+            margin: 10px;
+            height: 200px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 200px;
+            background-color: rgba(187, 255, 0, 0.829);
+        }
+
+        div.div2 {
+            background-color: royalblue;
+            /* transition-delay:  */
+            transition-property: all;
+            transition-duration: 400ms;
+            margin: 10px;
+            transition-timing-function: cubic-bezier(.52, .53, .52, .53);
+            cursor: pointer;
+        }
+
+        div.div2:hover {
+            background-color: seagreen;
+            transform: translate(200px, 200px) scale(2, 2);
+            width: 200px;
+            margin: 10px;
+            height: 200px;
+            text-align: center;
+            vertical-align: middle;
+            border: 2px solid rgb(33, 26, 77);
+            border-radius: 50%;
+        }
+
+        div.animation {
+            width: 20px;
+            height: 200px;
+            background-color: red;
+            animation-name: myAnimation;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes myAnimation {
+            0% {
+                background-color: red;
+            }
+            25% {
+                background-color: yellow;
+                /* width: 200px; */
+            }
+            50% {
+                background-color: blue;
+            }
+            75% {
+                background-color: green;
+            }
+            100% {
+                background-color: brown;
+                height: 200px;
+                width: 200px;
+            }
+        }
+
+        div.banner {
+            position: absolute;
+            left: calc(40px);
+            width: calc(100% - 80px);
+            background-origin: 1px solid #333;
+            box-shadow: 1px 2px;
+            background-color: seagreen;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 15px;
+            color: #fff;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="transition">Transition Box</div>
+    <div class="div2"></div>
+    <div class="animation"></div>
+    <div class="banner">This is Banner (Not Bruce LoL)</div>
+
+</body>
+
+</html>
