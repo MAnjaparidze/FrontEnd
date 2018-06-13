@@ -1,6 +1,7 @@
 :root {
     --yellow:#1abc9c;
     --black:#282828;
+    --white:rgb(245, 245, 245);
 }
 
 html {
