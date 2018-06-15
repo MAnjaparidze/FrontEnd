@@ -1,53 +1,299 @@
+* {
+    font-family: 'Helvetica', 'Corbel', sans-serif;
+}
 body {
-    background-color: white;
+    font-family: 'Lato', 'Helvetica', 'Corbel', sans-serif
 }
-header {
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: black;
+.upper {
     width: 100%;
-    max-width: 100% !important;
-    margin: 0 auto;
-    height: 48px;
+    height: 506px;
+    display: grid;
+    grid-template-rows: 62px 444px;
+    grid-template-areas: 
+    "Top"
+    "Bottom";
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom,rgba(0, 140, 255, 0.2), rgba(0, 140, 255, 0.9));
+    background-image: url(../images/background.png);
+    background-position: center;
 }
-.navWrap {
-    width: 1228px;
-    margin: 0 auto;
+.headerWrapper {
+    grid-area: Top;
+    display: grid;
+    justify-content: center;
+    width: 1600px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.308);
+    border-top: 1px solid rgba(255, 255, 255, 0.308);
+}
+.header {
+    display: grid;
+    width: 1200px;
+    grid-template-areas: 
+    "left center right";
+    grid-template-columns: 525px 150px 525px;
+}
+.headerWrapper:hover {
+    background-color: green;
+    color: black;
+}
+.left, .center, .right {
+    height: 60px;
+    display: grid;
+}
+.left {
     display: flex;
+    flex-direction: wrap;
+    padding-left: 20px;
 }
-.navWrap a {
+.left > button {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0;
+    line-height: 20px;
+}
+.left >button:hover {
+    color: #71B307;
+}
+.searchWrapper {
+    width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 32px;
+    margin-right: 32px;
+}
+.searchContainer {
+    background-color: rgba(0, 0, 0, 0.1);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+.wrapper {
+    width: 180px;
+    height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.wrapper > span {
+    color: white;
+}
+.searchContainer > form > input {
+    width: 160px;
+    height: 20px;
+    padding: 0;
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: 700;
+}
+.wrapper > i {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    float: right;
+}
+.center {
+    align-items: center;
+    justify-content: center;
+}
+.center > a > img {
+    width: 180px;
+    height: 50px;
+}
+.right {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.right > a {
     text-decoration: none;
+    color: #ffffff;
+    margin-left: 32px;
+    font-weight: 700;
+    font-size: 16px;
+}
+.right > a:hover {
+    color: #71B307;
+}
+.lower {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.lowerContent {
+    width: 600px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 4px;
+    margin-bottom: 50px;
+}
+.lowerContent > div {
+    width: 326px;
+    height: 46px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+.lowerContent > h2,h1 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.lowerContent > h1 {
+    font-weight: bold;
+    font-size: 36px;
+    letter-spacing: -0.8px;
+    color: #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.lowerContent > h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    letter-spacing: -0.8px;
+    color: #ffffff;
+    font-weight: normal;
+}
+.lowerContent > div > a {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 326px;
+    height: 46px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+.learners {
+    background-color: #00294a;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+.learners > a {
+    color: #ffffff;
+}
+.learners:hover {
+    background-color: #00294ac7;
+}
+.teachers,
+.parents {
+    background-color: #ffffff;
+}
+.teachers > a{
+    color: #00294a;
+}
+.teachers > a:hover {
+    color: #00294ac7;
+}
+.parents > a{
+    color: #00294a;
+}
+.parents > a:hover {
+    color: #00294ac7;
+}
+.parents {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 .mainNav {
-    display: flex;
-    height: 48px;
-    width: 880px;
+    width: 1583px;
+    height: 56px;
+    background-color: #f6f7f7;
 }
-ul li {
-    float: left;
-    margin: 5px;
-    padding-top: 10px;
+.navWrapper {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-gap: 20px;
+    align-content: space-between;
+    align-items: center;
+    width: 1200px;
+    height: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 0;
+    list-style: none;
+    margin: 0 auto;
 }
-ul {
-    list-style-type: none;
-    height: 48px;
-    margin: 0;
+/* .navWrapper > li {
+    display: grid;
+    align-items: center;
+} */
+.navWrapper > li > a {
+    height: 24px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 550;
+    letter-spacing: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.nav {
-    padding-left: 0px;
+/* Li Text Positioning */
+.firstLi {
+    display: grid;
+    justify-content: left;
+    align-items: center;
 }
-.nav li a {
-    color: grey;
+.middleLi {
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
-.logo {
-    font-family: Arial, Helvetica, sans-serif;
-    float: left;
-    font-size: 1.5em;
-    color: white;
-    width: 72px;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    font-weight: 400;
+.lastLi {
+    display: grid;
+    justify-content: right;
+    align-items: center;
 }
+/* / Li Text Positioning */
+
+/* Li Text Coloring */
+.firstLi > a {
+    color: #000000;
+}
+.middleLi > a {
+    color: #62657c;
+}
+.lastLi > a {
+    color: #62657c;
+}
+/* /Li Text Coloring */
+
+/* Li Hover */
+.firstLi > a:hover {
+    text-decoration: underline;
+    color: #085566;
+}
+.science > a:hover {
+    text-decoration: underline;
+    color: #6b0235;
+}
+.computing > a:hover {
+    text-decoration: underline;
+    color: #085e29;
+}
+.arts > a:hover {
+    text-decoration: underline;
+    color: #8c1c0d;
+}
+.economics > a:hover {
+    text-decoration: underline;
+    color: #953c02;
+}
+.testPrep > a:hover {
+    text-decoration: underline;
+    color: #013493;
+}
+.college > a:hover {
+    text-decoration: underline;
+    color: #144f44;
+}
+/* /Li Hover */
+
 
