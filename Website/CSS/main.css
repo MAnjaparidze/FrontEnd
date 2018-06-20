@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    background-color: grey;
+}
+header {
+    background-color: #000000;
+    width: 1580px;
+    text-align: center;
+}
+header > h1 {
+    margin: 0;
+    padding: 10px;
+    color: #fff;
+    text-shadow: 3px 3px rgba(255, 255, 255, 0.3);
+}
+.container {
+    display: grid;
+    width: 1200px;
+    grid-template-columns: 45% 45%;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 20px;
+}
+
+.homeworks,
+.in-class {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 8px;
+    height: auto;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.in-class {
+    grid-template-areas: 10% 45% 45%;
+}
+.homeworks > h2,
+.in-class > h2 {
+    grid-column: -1 / 1;
+    height: 30px;
+    text-align: center;
+}
