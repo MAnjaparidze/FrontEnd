@@ -150,37 +150,91 @@
 
 // #endregion 1
 
-let id = Symbol('id');
-let id1 = Symbol('id');
+// #region Symbol
 
-console.log(id === id1);
-john[id] = "ID Value";
+// let id = Symbol('id');
+// let id1 = Symbol('id');
 
-console.log(john[id]);
+// console.log(id === id1);
+// john[id] = "ID Value";
 
-// console.log(john);
+// console.log(john[id]);
 
-for( let key in john ) {
-    console.log(key)
+// // console.log(john);
+
+// for( let key in john ) {
+//     console.log(key)
+// }
+// let customer = {
+//     name: 'Super',
+//     // [id]: 140  'id' => 140
+// }
+
+// // console.log(customer[id])
+
+// function User(name){
+//     // this => {}
+//     this.name = name;
+//     this.isAdmin = false;
+
+//     this.hello = function(){
+//         alert(`My Name is : ${this.name}`)
+//     }
+
+// }
+
+// let conUser = new User("new User");
+// console.log(conUser)
+// conUser.hello();
+
+// #endregion Symbol
+
+// #region String
+
+// let num = 5;
+// let single = ' single';
+// let double = " double";
+// let backticks = 'backticks';
+
+// console.log('my ' + num + single);
+// console.log("my " + num + '"' + double + '"');
+// console.log(`js's ${num} "$single}"`);
+
+// console.log('\u00A9')
+// console.log('\u{20331}')
+// console.log('\I u{1F60D} JS')
+
+let str = "Hello";
+// console.log("String".length);
+// console.log(str.charAt(2));
+// console.log(str[0]);
+
+
+// for(let char of str){
+//     console.log(char);
+// }
+
+// str[0] = 'h';
+str = 'hello from the other side.';
+// console.log(str);
+// console.log("uppercase".toLocalUpperCase());
+// console.log('LOWERCASE'.toLowerCase());
+// console.log("uppercase"[0].toUpperCase());
+
+console.log(str.lastIndexOf('e'));
+
+let target = 'the';
+let pos = 0;
+
+while(true) {
+    let foundPos = str.indexOf(target, pos);
+    if( foundPos == -1) break;
+
+    console.log(`Found at ${foundPos}`);
+    pos = foundPos + 1;
 }
-let customer = {
-    name: 'Super',
-    // [id]: 140  'id' => 140
-}
 
-// console.log(customer[id])
+console.log('2-3'.split('-').join(":"));
 
-function User(name){
-    // this => {}
-    this.name = name;
-    this.isAdmin = false;
 
-    this.hello = function(){
-        alert(`My Name is : ${this.name}`)
-    }
-
-}
-
-let conUser = new User("new User");
-console.log(conUser)
-conUser.hello();
+// #endregion String
