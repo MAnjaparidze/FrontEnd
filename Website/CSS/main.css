@@ -1,12 +1,15 @@
 body {
     margin: 0;
-    background-image: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0.8) 50%, black 100%);
-
+    background: url("") no-repeat,linear-gradient(to right, black 0%, rgba(0, 0, 0, 0.8) 50%, black 100%);
+    background-attachment: fixed;
+    background-position: bottom right;
 }
 /* #region header */
 header {
     width: 100%;
     text-align: center;
+    position: fixed;
+    margin-top: -100px;
 }
 header > h1 {
     margin: 0;
@@ -27,6 +30,7 @@ header > h1 > hr {
     width: 1200px;
     grid-template-columns: 45% 45%;
     margin: 0 auto;
+    margin-top: 100px;
     justify-content: center;
     align-content: center;
     grid-gap: 20px;
@@ -37,16 +41,19 @@ header > h1 > hr {
 .in-class {
     display: grid;
     grid-template-columns: 100%;
-    height: auto;
     margin: 10px;
+    height: auto;
     border-radius: 5px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.089);
-    /* background-image: linear-gradient(45deg,rgba(128, 128, 128, 0.5), grey,rgba(128, 128, 128, 0.5)); */
 }
 .in-class {
-    grid-template-rows: 20% 40% 40%;
+    grid-template-rows: 75.8333px auto auto;
 }
+.hwHeader{
+    height: 69.8333px;
+}
+
 .homeworks > div,
 .in-class > div{
     padding: 3px;
@@ -75,10 +82,20 @@ header > h1 > hr {
     color: rgba(172, 255, 47, 0.904);
     font-size: 16px;
 }
-.hw {
+.hw,
+.months {
     font-weight: 700;
     font-size: 18px;
     margin-bottom: 3px;
+}
+.hw > ul.panel {
+    display: none;
+}
+span {
+    cursor: pointer;
+    width: 100%;
+    display: block;
+
 }
 /* #endregion .homeworks and in-class */
 
@@ -91,14 +108,12 @@ header > h1 > hr {
 }
 .homeworks:hover,
 .in-class:hover {
-    /* background-image: linear-gradient(45deg,rgba(128, 128, 128, 1), rgba(255, 255, 255, 0.7),rgba(128, 128, 128, 1)); */
     background-color: rgba(255, 255, 255, 0.2);
 }
 .hw:hover,
 .months:hover {
     background-color: rgba(128, 128, 128, 0.7);
     border-radius: 4px;
-    /* padding: 5px; */
 }
 .panel > li:hover {
     background-color: rgba(255, 255, 255, 0.1);

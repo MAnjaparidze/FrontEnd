@@ -1,9 +1,11 @@
 function makeUser() {
     return {
         name: "John",
-        ref: this
+        ref: function() {
+            return this;
+        }
     };
 };
 
 let userF = makeUser();
-console.log(userF.ref.name);
+console.log(userF.ref().ref().ref());
