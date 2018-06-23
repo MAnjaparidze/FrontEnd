@@ -5,14 +5,14 @@ body {
 }
 /* #region header */
 header {
-    width: 1600px;
+    width: 100%;
     text-align: center;
 }
 header > h1 {
     margin: 0;
     padding: 10px;
     color: #20c20e;
-    text-shadow: 3px 3px #20c20e38;
+    text-shadow: 2px 2px #20c20e38;
     font-weight: 900;
 }
 header > h1 > hr {
@@ -41,8 +41,8 @@ header > h1 > hr {
     margin: 10px;
     border-radius: 5px;
     padding: 10px;
-    /* background-image: linear-gradient(45deg,rgba(128, 128, 128, 0.5), grey,rgba(128, 128, 128, 0.5)); */
     background-color: rgba(255, 255, 255, 0.089);
+    /* background-image: linear-gradient(45deg,rgba(128, 128, 128, 0.5), grey,rgba(128, 128, 128, 0.5)); */
 }
 .in-class {
     grid-template-rows: 20% 40% 40%;
@@ -63,8 +63,14 @@ header > h1 > hr {
 }
 .panel > li {
     list-style-type: none;
+    margin-bottom: 5px;
+    margin-left: -30px;
+    border-radius: 6px;
+    padding-left: 5px;
+    transition: 0.25s;
 }
 .panel > li > a {
+    display: block;
     text-decoration: none;
     color: rgba(172, 255, 47, 0.904);
     font-size: 16px;
@@ -73,24 +79,30 @@ header > h1 > hr {
     font-weight: 700;
     font-size: 18px;
     margin-bottom: 3px;
-    
 }
 /* #endregion .homeworks and in-class */
 
 /* #region hovers */
-.hw:hover,
-.months:hover {
-    background-color: rgba(128, 128, 128, 0.7);
-    transition: 0.3s;
-    border-radius: 4px;
-    padding: 5px;
+.homeworks,
+.in-class,
+.hw,
+.months{
+    transition: 0.25s;
 }
 .homeworks:hover,
 .in-class:hover {
     /* background-image: linear-gradient(45deg,rgba(128, 128, 128, 1), rgba(255, 255, 255, 0.7),rgba(128, 128, 128, 1)); */
     background-color: rgba(255, 255, 255, 0.2);
-    transition: 0.3s;
-    padding: 15px;
+}
+.hw:hover,
+.months:hover {
+    background-color: rgba(128, 128, 128, 0.7);
+    border-radius: 4px;
+    /* padding: 5px; */
+}
+.panel > li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 7px;
 }
 /* #endregion hovers */
 
