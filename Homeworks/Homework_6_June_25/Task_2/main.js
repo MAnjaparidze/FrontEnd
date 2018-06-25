@@ -1,10 +1,13 @@
-var Car = function(name, color, brand) {   //შევქმენი კონსტრუქტორი პარამეტრებით სახელი ფერი და ბრენდი
+var Car = function (name, color, brand) {   //შევქმენი კონსტრუქტორი პარამეტრებით სახელი ფერი და ბრენდი
     this.setName = name;                    //ანიჭებს მეთოდს .setName სახელს
     this.setColor = color;                  //ანიჭებს მეთოდს .setColor ფერს
     this.setBrand = brand;                  //ანიჭებს მეთოდს .setBrand ბრენდს
-    this.save();
-    console.log("Saving " + this.setName + ", " + "Color - " + this.setColor + ", " + "Brand - " + this.setBrand + "...");
 
+    this.save = function () {               // შევქმენი ფუნქცია ინფორმაციის შესანახად
+        console.log("Saving " + this.setName + ", " + "Color - " + this.setColor + ", " + "Brand - " + this.setBrand + "...");
+    }
+
+    this.save();
 }
 
 var myCar = new Car("Jetta", "Grey", "WV");
