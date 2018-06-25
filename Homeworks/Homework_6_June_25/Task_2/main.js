@@ -2,6 +2,7 @@ var Car = function(name, color, brand) {
     this.setName = name;
     this.setColor = color;
     this.setBrand = brand;
+    this.save();
     console.log("Saving " + this.setName + ", " + "Color - " + this.setColor + ", " + "Brand - " + this.setBrand + "...");
 
 }
