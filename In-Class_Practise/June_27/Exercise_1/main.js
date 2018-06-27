@@ -1,0 +1,11 @@
+let styles = ["Jass", "Blues"];
+console.log(styles);
+styles.push("Rock-n-Roll");
+console.log(styles);
+var x = Math.floor(styles.length / 2);
+styles[x] = "Classics";
+console.log(styles);
+styles.shift();
+console.log(styles);
+styles.splice(0,1, "Rap", "Reggae");
+console.log(styles);
