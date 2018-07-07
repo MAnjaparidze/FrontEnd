@@ -90,20 +90,73 @@ let jimi = new Person("Jimi", "Hendrix");
 
 //#region #4 DOM
 
-window.onload = () => {
-    init();
-}
-function init(){
-    func()
-    func()
-    func()
-    func()
-}
-// fun1
-// funcq
+/*    
+    window.onload = () => {
+
+    }
+*/
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    let h1 = document.getElementsByTagName('h1')[0];
+    console.log(h1);
+    h1.innerHTML = "Hello from JS";
+    h1.style.color = "red";
+    h1.style.padding = "10px";
+    h1.style.backgroundColor = "#eee";
+    h1.style.textAlign = "center";
 
+    h1.addEventListener('click', (event) => {
+        setTimeout(greet, 3000);
+    })
 })
 
 //#endregion #4 DOM
+
+// #region #5 set-Timeout
+
+
+function greet(){
+    alert("SetTimeout()");
+}
+
+// setTimeout(() => alert("Arrow Function"), 1000);
+
+// let timerId = setTimeout(say, 200, "I am from Georgia", helloJohn);
+// console.log(timerId);
+// clearTimeout(timerId);
+
+// let intervalId = setInterval(() => {
+//     alert("setInterval")
+// }, 1000);
+
+// setTimeout(() => {
+//     clearInterval(intervalId);
+//     alert("Stop Interval");
+// }, 5000);
+
+setTimeout(() => alert("World"), 0);
+
+alert("Hello");
+// #endregion #5 set-Timeout
+
+//#region #6
+
+function count2(){
+    do {
+        i++;
+    }
+    while(i % 1e6 != 0);
+    if( i == 2e9 ){
+        alert(`Done ${Date.now() - start} ms`);
+    }
+    else {
+        setTimeout(count2, 0);
+    }
+}
+
+count2();
+s();
+
+//#endregion #6
+

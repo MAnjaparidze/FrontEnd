@@ -1,0 +1,125 @@
+/* #region mainBox */
+#box {
+    display: grid;
+    height: 520px;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: 
+                "col1 col2 col3"
+                "Launch";
+    grid-gap: 15px;
+    justify-content: center;
+    align-content: center;
+    background-color: #eee;
+    margin: 0 auto;
+    padding: 10px;
+}
+.col1,
+.col2,
+.col3 {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-gap: 15px;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+}
+.col1 {
+    grid-area: "col1";
+}
+.col2 {
+    grid-area: "col2";
+}
+.col3 {
+    grid-area: "col3";
+}
+/* #endregion mainBox */
+
+/* #region chooseBar */
+.col1 > #row1 {
+    background-color: green;
+    width: 150px;
+    height: 150px;
+}
+.col1 > #row2 {
+    background-color: yellow;
+    width: 150px;
+    height: 150px;
+}
+.col1 > #row3 {
+    background-color: red;
+    width: 150px;
+    height: 150px;
+}
+.col2 > #row1 {
+    background-color: blue;
+    width: 150px;
+    height: 150px;
+}
+.col2 > #row2 {
+    background-color: deeppink;
+    width: 150px;
+    height: 150px;
+}
+.col2 > #row3 {
+    background-color: brown;
+    width: 150px;
+    height: 150px;
+}
+.col3 > #row1 {
+    background-color: purple;
+    width: 150px;
+    height: 150px;
+}
+.col3 > #row2 {
+    background-color: orangered;
+    width: 150px;
+    height: 150px;
+}
+.col3 > #row3 {
+    background-color: coral;
+    width: 150px;
+    height: 150px;
+}
+
+#launch {
+    grid-area: "Launch";
+    grid-column: 2 / 3;
+}
+.innerBox {
+    border-radius: 4px;
+}
+/* #endregion chooseBar */
+
+/* #region resultBar */
+
+#result {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    grid-gap: 15px;
+    padding: 10px;
+    background-color: #eee;
+}
+#result1{
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+#result2{
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+#result3{
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+/* #endregion resultBar */
+
