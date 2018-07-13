@@ -62,8 +62,18 @@
 .displayTable {
    width: 100%;
    display: flex;
-   overflow-x: auto;
-   overflow-y: hidden;
+   height: 560px;
+   /* overflow: auto; */
+}
+.checkSide {
+    display: flex;
+    height: 540px;
+}
+.markingSide {
+    display: flex;
+    overflow: auto;
+    width: 790px;
+    height: 560px;
 }
 
 .studentList,
