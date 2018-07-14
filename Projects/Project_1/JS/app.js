@@ -49,7 +49,7 @@ addDay.addEventListener('click', function (e) { // Adding eventListener of click
     for (let i = 0; i < marks.length; i++) {
         marks[i].addEventListener("click", addMark);
     }
-    calcAverage();
+    updateEverything();
 
 });
 //#region Add mark and Change Color of MarkBox 
@@ -75,36 +75,7 @@ function addMark(e) {
     else {
         e.target.style.backgroundColor = "red";
     }
-    calcAverage();
-    // Calculating Average and assigning to proper cell
-
-    // let idOfDiv = e.target.id;
-    // let avgId = "avgOf" + idOfDiv;
-
-
-    // let cols = document.getElementsByClassName("column");
-    // let colsNumber = parseInt(cols.length, 10);
-
-
-    // let numArray = [];
-    // let idOfproperDiv = parseInt(parseInt(idOfDiv) + 1);
-    // var arrSum = 0;
-
-    // for (i = 0; i < colsNumber; i++) {
-
-
-    //     let preciseColNum = cols[i];
-    //     console.log(idOfproperDiv);
-    //     let cellValue = parseInt(preciseColNum.childNodes[idOfproperDiv].textContent);
-
-    //     numArray.push(cellValue);
-    //     console.log(numArray);
-    // }
-    // for (i = 0; i < numArray.length; i++) {
-    //     arrSum += parseInt(numArray[i], 10);
-    // }
-    // var arrAvg = (arrSum / numArray.length).toPrecision(2);
-    // document.getElementById(avgId).textContent = arrAvg;
+    updateEverything();
 
 }
 
@@ -130,25 +101,31 @@ removeDay.addEventListener('click', function (e) {
             date.setDate(date.getDate() - 1);
         }
     }
-    calcAverage();
+    updateEverything();
 });
 
 
 
 // #endregion Delete Day
 
+//#region Update Everything
 
+function updateEverything(){        // General Function of update
+    calcAverage();
+    totalDaysCounter();
+    missedLessonsCounter();
+    averageMarkCalculator();
+}
 
-//#region Calculating average
-
-function calcAverage() {
+function calcAverage() {            // Function for calculating mark average
     let cols = document.getElementsByClassName("column");
     let colsNumber = parseInt(cols.length, 10);
     // let idOfDiv = 0;
     // let avgId = "avgOf" + idOfDiv;    
-    let numArray = [];
-    var arrSum = 0;
+   
     for (id = 0; id < 15; id++) {
+        let numArray = [];
+        var arrSum = 0;
         idOfDiv = id;
         avgId = "avgOf" + idOfDiv;
 
@@ -174,30 +151,25 @@ function calcAverage() {
     }
 }
 
+// End of mark Calculation function
 
-//#endregion Calculating average
 
-//#region Update Statistics
-
-function totalDaysCounter() {
+function totalDaysCounter() {                                                         // Function for calculating total days
     let cols = document.getElementsByClassName("column");
     let colsNumber = parseInt(cols.length, 10);
-    let totalDays = parseInt(document.getElementById("totalDays").textContent);
-    arrSum = 0;
-    for (i = 0; i < colsNumber; i++) {
-        let days = parseInt(cols[i].childNodes.length, 10);
-        arrSum += days;
-    }
-    totalDays = arrSum - colsNumber;
-    document.getElementById("totalDays").textContent = totalDays;
+
+    document.getElementById("totalDays").textContent = colsNumber;
 }
 
-function missedLessonsCounter() {
+// End of calculating total days
+
+function missedLessonsCounter() {                                                   // Function for calculating missed Lessons
     let cols = document.getElementsByClassName("column");
     let colsNumber = parseInt(cols.length, 10);
-    let totalDays = parseInt(document.getElementById("totalDays").textContent);
+    let totalDaysMissed = parseInt(document.getElementById("missedLessons").textContent);
+    let missedLessons = 0;
+
     for (i = 0; i < colsNumber; i++) {
-        let missedLessons = 0;
         let days = parseInt(cols[i].childNodes.length, 10);
         for (a = 0; a < days; a++){
             if(cols[i].childNodes[a].textContent == "0"){
@@ -205,7 +177,31 @@ function missedLessonsCounter() {
             }
         }
     }
-    document.getElementById("totalDays").textContent = missedLessons;
+    document.getElementById("missedLessons").textContent = missedLessons;
 }
 
-//#endregion Update Statistics
+function averageMarkCalculator() {
+    var avgCol = document.querySelectorAll('.avg');
+    let avgSum = 0;
+    console.log(avgCol);
+    for(i = 0; i < avgCol.length; i++){
+        let thisAvgCol = parseInt(avgCol[i].textContent);
+        console.log(thisAvgCol);
+        avgSum += thisAvgCol;
+    };
+    var arrAvg = (avgSum / avgCol.length).toPrecision(3);
+    document.getElementById('averageMark').textContent = arrAvg;
+
+}
+
+
+// Button of Update
+
+let updateBtn = document.getElementById("updateDay");
+updateBtn.addEventListener('click', updateEverything);
+
+// End of Button of Update
+
+// End of calculating missed lessons
+
+//#endregion Update Everything
