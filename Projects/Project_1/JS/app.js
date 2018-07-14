@@ -49,7 +49,7 @@ addDay.addEventListener('click', function (e) { // Adding eventListener of click
     for (let i = 0; i < marks.length; i++) {
         marks[i].addEventListener("click", addMark);
     }
-
+    calcAverage();
 
 });
 //#region Add mark and Change Color of MarkBox 
@@ -75,28 +75,37 @@ function addMark(e) {
     else {
         e.target.style.backgroundColor = "red";
     }
+    calcAverage();
+    // Calculating Average and assigning to proper cell
+
+    // let idOfDiv = e.target.id;
+    // let avgId = "avgOf" + idOfDiv;
 
 
+    // let cols = document.getElementsByClassName("column");
+    // let colsNumber = parseInt(cols.length, 10);
 
-    let idOfDiv = e.target.id;
-    let avgId = "avgOf" + idOfDiv;
+
+    // let numArray = [];
+    // let idOfproperDiv = parseInt(parseInt(idOfDiv) + 1);
+    // var arrSum = 0;
+
+    // for (i = 0; i < colsNumber; i++) {
 
 
-    let cols = document.getElementsByClassName("column");
-    let colsNumber = parseInt(cols.length, 10);
+    //     let preciseColNum = cols[i];
+    //     console.log(idOfproperDiv);
+    //     let cellValue = parseInt(preciseColNum.childNodes[idOfproperDiv].textContent);
 
-    let num = parseInt(document.getElementById(avgId).textContent);
+    //     numArray.push(cellValue);
+    //     console.log(numArray);
+    // }
+    // for (i = 0; i < numArray.length; i++) {
+    //     arrSum += parseInt(numArray[i], 10);
+    // }
+    // var arrAvg = (arrSum / numArray.length).toPrecision(2);
+    // document.getElementById(avgId).textContent = arrAvg;
 
-    Array.from(cols).forEach(function(e){
-        let cellMark = document.getElementById([idOfDiv]).innerText;
-        let cellMarkNum = parseInt(cellMark, 10);
-        num = num + cellMarkNum;
-        console.log(num);
-        
-    });
-    num = num / colsNumber;
-    document.getElementById(avgId).textContent = num;
-    
 }
 
 //#endregion Add mark and Change Color of MarkBox
@@ -121,6 +130,7 @@ removeDay.addEventListener('click', function (e) {
             date.setDate(date.getDate() - 1);
         }
     }
+    calcAverage();
 });
 
 
@@ -131,5 +141,71 @@ removeDay.addEventListener('click', function (e) {
 
 //#region Calculating average
 
+function calcAverage() {
+    let cols = document.getElementsByClassName("column");
+    let colsNumber = parseInt(cols.length, 10);
+    // let idOfDiv = 0;
+    // let avgId = "avgOf" + idOfDiv;    
+    let numArray = [];
+    var arrSum = 0;
+    for (id = 0; id < 15; id++) {
+        idOfDiv = id;
+        avgId = "avgOf" + idOfDiv;
+
+        let idOfproperDiv = parseInt(parseInt(idOfDiv) + 1);
+
+        for (i = 0; i < colsNumber; i++) {
+
+            let cellValue = parseInt(cols[i].childNodes[idOfproperDiv].textContent);
+
+            numArray.push(cellValue);
+        }
+
+        for (i = 0; i < numArray.length; i++) {
+            arrSum += parseInt(numArray[i], 10);
+        }
+
+        var arrAvg = (arrSum / numArray.length).toPrecision(2);
+        document.getElementById(avgId).textContent = arrAvg;
+
+        if (colsNumber == 0) {
+            document.getElementById(avgId).textContent = 0;
+        }
+    }
+}
+
 
 //#endregion Calculating average
+
+//#region Update Statistics
+
+function totalDaysCounter() {
+    let cols = document.getElementsByClassName("column");
+    let colsNumber = parseInt(cols.length, 10);
+    let totalDays = parseInt(document.getElementById("totalDays").textContent);
+    arrSum = 0;
+    for (i = 0; i < colsNumber; i++) {
+        let days = parseInt(cols[i].childNodes.length, 10);
+        arrSum += days;
+    }
+    totalDays = arrSum - colsNumber;
+    document.getElementById("totalDays").textContent = totalDays;
+}
+
+function missedLessonsCounter() {
+    let cols = document.getElementsByClassName("column");
+    let colsNumber = parseInt(cols.length, 10);
+    let totalDays = parseInt(document.getElementById("totalDays").textContent);
+    for (i = 0; i < colsNumber; i++) {
+        let missedLessons = 0;
+        let days = parseInt(cols[i].childNodes.length, 10);
+        for (a = 0; a < days; a++){
+            if(cols[i].childNodes[a].textContent == "0"){
+                missedLessons += 1;
+            }
+        }
+    }
+    document.getElementById("totalDays").textContent = missedLessons;
+}
+
+//#endregion Update Statistics
