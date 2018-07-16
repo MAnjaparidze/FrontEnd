@@ -69,9 +69,16 @@ function addMark(e) {
     // End of Adding mark to a markCell
 
     //Changing Color to a div according to input
-    if (e.target.textContent > "0") {
+    if (e.target.textContent <= "5" && e.target.textContent > "3") {
         e.target.style.backgroundColor = "green";
     }
+    else if (e.target.textContent == "3" ) {
+            e.target.style.backgroundColor = "orange";
+        }
+    else if (e.target.textContent < "3" && e.target.textContent > "0"){
+        e.target.style.backgroundColor = "yellow";
+    }
+    
     else {
         e.target.style.backgroundColor = "red";
     }
