@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise 1</title>
+</head>
+
+<body>
+    <div>Hello DOM</div>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+    <!--
+        1) უნდა ავირჩიოთ Div
+        2) ვბეჭდავთ ol
+        3) დავბეჭდოთ (Item 2)
+    -->
+    <script>
+        let body = document.body;
+        let childNodes = body.childNodes;
+        childNodes.forEach((el) => {
+            if (el.nodeName.toLowerCase() === 'div') {
+                return console.log(childNodes);
+                if (el.nodeName.toLowerCase() === 'ol') {
+                    return console.log()
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

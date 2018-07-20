@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise 2</title>
+    <style>
+        .container {
+            display: grid;
+            width: 300px;
+            height: 300px;
+            grid-gap: 2px;
+            margin: 0 auto;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            grid-gap: 2px;
+        }
+
+        .row>div {
+            border-color: black;
+            border-width: 2px;
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="row">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="row">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="row">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="row">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="row">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <script>
+
+        let body = document.body;
+        let container = body.firstElementChild;
+        let childNodes = container.children;
+        console.log(childNodes.length);
+
+        for (a = 0; a < childNodes.length; a++) {
+            if (a < 2) {
+                let rowChilds = childNodes[a].children;
+                console.log(rowChilds);
+                rowChilds[2].style.backgroundColor = "black";
+                
+                rowChilds[3].style.backgroundColor = "black";
+            }
+            if (a == 2) {
+                let rowChilds = childNodes[a].children;
+                for (i = 0; i < rowChilds.length; i++) {
+                    if (i != 2) {
+                        rowChilds[i].style.backgroundColor = "blue";
+                    }
+                    else {
+                        rowChilds[i].style.backgroundColor = "black";
+                    }
+                }
+            }
+            if (a == 3) {
+                let rowChilds = childNodes[a].children;
+                for (i = 0; i < rowChilds.length; i++) {
+                    if (i != 3) {
+                        rowChilds[i].style.backgroundColor = "blue";
+                    }
+                    else {
+                        rowChilds[i].style.backgroundColor = "black";
+                    }
+                }
+            }
+            if (a > 3){
+                let rowChilds = childNodes[a].children;
+                rowChilds[2].style.backgroundColor = "black";
+                rowChilds[3].style.backgroundColor = "black";
+            }
+        }
+    </script>
+</body>
+
+</html>
