@@ -1,0 +1,39 @@
+.container {
+    display: grid;
+    margin: 0 auto;
+    width: 600px;
+    height: 400px;
+    grid-template-rows: 30% 70%;
+    background-color: rgba(255, 230, 0, 0.253);
+}
+.input {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 5px;
+    grid-row-gap: 10px;
+}
+.input > input {
+    width: 120px;
+    height: 25px;
+}
+#button {
+    grid-column: -4/-2;
+    height: 30px;
+}
+.divs {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 10px;
+}
+.divs > div {
+    height: 120px;
+    width: 120px;
+    border: 1px solid black;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}

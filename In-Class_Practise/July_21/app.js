@@ -4,6 +4,10 @@
 let myWow = document.getElementById('wow');
 myWow.style.padding = "20px";
 myWow.style.backgroundColor = "red";
+myWow.style.fontSize = '18px';
+myWow.style.color = '#fff';
+myWow.style.marginBottom = '15px';
+// myWow.hidden = true;
 // console.log(myWow);
 
 // getElementBy*
@@ -40,10 +44,45 @@ elements.forEach( el => {
 let element = document.querySelector("ul:last-of-type");
 // console.log(element);
 
-console.log(document.body.constructor.name);
+// console.log(document.body.constructor.name);
 
-console.log(document.body instanceof HTMLBodyElement);
-console.log(document.body instanceof HTMLElement);
-console.log(document.body instanceof Element);
-console.log(document.body instanceof Node);
-console.log(document.body instanceof EventTarget);
+// console.log(document.body instanceof HTMLBodyElement);
+// console.log(document.body instanceof HTMLElement);
+// console.log(document.body instanceof Element);
+// console.log(document.body instanceof Node);
+// console.log(document.body instanceof EventTarget);
+
+// console.log(wow.innerText);
+// console.log(wow.textContent);
+
+// console.log(username.value);
+username.addEventListener('input', ({target}) => {
+    result.textContent = target.value;
+})
+
+document.body.info = {
+    name: "Body Info",
+    title: "HTML5",
+}
+Element.prototype.whoAmI = function(){
+    console.log(`I am - <${this.tagName.toLowerCase()}> tag`);
+}
+// document.body.whoAmI();
+// console.log(document.body.info.title);
+
+// element.hasAttribute(name);
+// element.getAttribute(name);
+// element.setAttribute(name, value);
+// element.removeAttribute(name);
+
+myWow.setAttribute('class', 'wow__class');
+// console.log(myWow.hasAttribute('class'));
+// console.log(myWow.getAttribute('id'));
+console.log(myWow);
+myWow.removeAttribute('class');
+console.log(myWow);
+
+console.log(myWow.attributes);
+for (let attr of myWow.attributes){
+    console.log(attr.name, attr.value)
+}
