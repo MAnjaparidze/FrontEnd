@@ -144,5 +144,16 @@ arrowFunction.addEventListener('click', (event) => {
     console.log('arrowFunction', this);
 });
 document.querySelector('a').addEventListener('click', (event) => {
-    
+
+})
+
+let listener = document.getElementById('listener');
+listener.addEventListener('click', function(event){
+    // event.stopImmediatePropagation();
+    // event.stopPropagation();
+    console.log('AddEventListener');
+})
+
+document.querySelector('a').addEventListener('click', (event) =>{
+    event.preventDefault();
 })
