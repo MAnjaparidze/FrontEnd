@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="loading">Loading...</div>
+    <div class="container">
+
+        <h1>Write Something About You</h1>
+
+        <div class="inputField">
+            <div>
+                <label for="day">Day</label>
+                <input type="text" id="day">
+
+                <label for="year">Year</label>
+                <input type="text" id="year">
+
+                <label for="month">Month</label>
+                <input type="text" id="month">
+
+                <label for="city">City</label>
+                <input type="text" id="city">
+
+            </div>
+
+            <div>
+                <label for="about">About</label>
+                <textarea name="" id="about" cols="30" rows="10" placeholder="About Text"></textarea>
+                <button style="background-color: green; color: white; border-radius: 4px; height: 30px" id="save">Save</button>
+            </div>
+
+            <div>
+                <img src="images/s-l300.gif" alt="" id="img">
+            </div>
+        </div>
+
+        <div class="resultField">
+            <div>
+                <h4>Your Birth day is:</h4>
+                <span id="birthDay"></span>
+                <br>
+                <br>
+
+
+                <h4>Your Birth Month is:</h4>
+                <span id="birthMonth"></span>
+                <br>
+                <br>
+
+
+                <h4>Your Birth Year is:</h4>
+                <span id="birthYear"></span>
+                <br>
+                <br>
+
+            </div>
+            <div>
+                <h4>You live in</h4>
+                <span id="livingPlace"></span>
+                <br>
+                <br>
+
+                <h4>Your "About Me"</h4>
+                <span id="aboutYou"></span>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+    <script src="exercise2.js"></script>
+</body>
+
+</html>
