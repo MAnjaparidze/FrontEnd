@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise 2</title>
+    <style>
+        .container {
+            width: 1280px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: grey;
+        }
+
+        #numbers {
+            width: 100%;
+            display: inline-block;
+        }
+
+        #numbers span {
+            display: inline-block;
+            background-color: grey;
+            border-radius: 4px;
+            color: white;
+            margin: 3px;
+            cursor: pointer;
+            font-size: 1.2em;
+            padding: 5px;
+        }
+
+        #nav {
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        #nav button {
+            padding: 5px;
+            border-radius: 6px;
+            margin-left: 5px;
+            color: white;
+            font-weight: bold;
+        }
+
+        #shuffleNum {
+            background-color: dodgerblue;
+        }
+        #byAscending {
+            background-color: seagreen;
+        }
+        #byDescending {
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>#Numbers</h1>
+
+        <div id="numbers">
+
+
+        </div>
+
+        <div id="nav">
+            <button id="shuffleNum">Shuffle Numbers</button>
+            <button id="byAscending">By Ascending</button>
+            <button id="byDescending">By Descending</button>
+        </div>
+
+    </div>
+
+    <script src="../JS/lib/jQuery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

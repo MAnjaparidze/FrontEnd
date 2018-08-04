@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise 1</title>
+    <style>
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        h1 {
+            color: deepskyblue;
+            width: 100%;
+            text-align: center;
+        }
+        span {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input {
+            width: 300px;
+        }
+        .btn {
+            display: flex;
+            flex-direction: row;
+            margin-top: 10px;
+        }
+        #save,
+        #showInfo {
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            margin-right: 10px;
+            color: white;
+            font-weight: bold;
+        }
+        #save {
+            background-color: seagreen;
+        }
+        #showInfo {
+            background-color: dodgerblue;
+        }
+        .info {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Save Your Info</h1>
+
+        <span>Name:</span>
+        <input type="text" placeholder="Name" id="name">
+        <span>Surname:</span>
+        <input type="text" placeholder="Surname" id="surname">
+        <span>Age:</span>
+        <input type="text" placeholder="Age" id="age">
+
+        <div class="btn">
+            <button id="save">Save</button>
+            <button id="showInfo">Show Info</button>
+        </div>
+
+        <div class="info">
+            <span id="nameInfo"></span>
+            <span id="surnameInfo"></span>
+            <span id="ageInfo"></span>
+        </div>
+    </div>
+    <script src="../JS/lib/jQuery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
