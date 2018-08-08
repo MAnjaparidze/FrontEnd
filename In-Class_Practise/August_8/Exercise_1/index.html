@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise 1</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .buttons{
+            display: flex;
+        }
+        table,
+        tr,
+        td,
+        th {
+            background-color: grey;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="input" style="margin-bottom: 20px">
+            <span style="font-weight: bold; margin-bottom: 5px;">შეიყვანეთ ტექსტი</span>
+            <input type="text" id="text" placeholder="Enter Text" style="border-radius: 4px; height: 20px; margin-bottom: 30px">
+            <div class="buttons" style="margin-bottom: 20px">
+                <button id="count" style="border-radius: 4px; height: 30px; font-weight: bold; margin-right: 10px;">Count</button>
+                <button id="clean" style="border-radius: 4px; height: 30px; background-color: deepskyblue; color: white; font-weight: bold">Clean</button>
+            </div>
+            <span style="color: deepskyblue">ყოველ მცდელობაზე გაასუფთავეთ ველი.</span>
+        </div>
+
+        <div class="output">
+            <span style="font-weight: bold">Counted:</span>
+            <br>
+            <table style="width: 100%" id="result">
+                <thead>
+                    <th>Char</th>
+                    <th>Count</th>
+                </thead>
+                
+            </table>
+        </div>
+    </div>
+
+
+    <script src="../JS/lib/jQuery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
