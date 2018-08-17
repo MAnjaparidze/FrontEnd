@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise 1 </title>
+
+    <style>
+        .container {
+            width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input,
+        .output {
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+
+        #fontSize,
+        #colorBtn,
+        #borderSize,
+        #backBtn,
+        #nextBtn {
+            width: 120px;
+            height: 30px;
+            margin: 5px;
+
+        }
+
+        #confirmBtn {
+            width: 120px;
+            height: 30px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+
+        #textArea {
+            width: auto;
+            height: auto;
+            background-color: yellowgreen;
+            padding: 6px;
+            border: 0px solid black;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="input">
+            <input type="text" id="fontSize" placeholder="Font Size">
+            <button id="colorBtn">Random Color</button>
+            <input type="text" id="borderSize" placeholder="Border Size">
+        </div>
+
+        <button id="confirmBtn">Confirm Changes</button>
+
+        <div class="output">
+            <button id="backBtn">Back</button>
+            <div id="textArea">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, nesciunt ipsam mollitia perferendis 
+                <br>
+                commodi natus expedita ratione itaque dolorem nisi.
+                <br>
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, mollitia!
+                <br>
+                <br>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, nisi?
+                
+            </div>
+            <button id="nextBtn">Next</button>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
