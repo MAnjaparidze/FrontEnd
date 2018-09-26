@@ -14,27 +14,30 @@
         
         <h1>Welcome to Python-Hub!</h1>
         <img src="images/Python.jpg" alt="" width="400px" height="400px" id="pythonPhoto">
-
+        
         <div class="mainDisplay">
             
-            <canvas width="600" height="600"></canvas>
-            <div class="userInterface">
-
+            <canvas id="playGround"></canvas>
+            <div id="userInterface">
+                
                 Please enter your name
-                <input type="text" id="userName">
-
+                <input id="userName" type="text">
+                
                 Please Choose Difficulty
                 <div id="difficultyNav">
-                    <button id="easy">Easy Pizzy</button>
-                    <button id="medium">Medium Shmedium</button>
-                    <button id="hard">Hard - Oh My God!</button>
+                    <button id="easy" value="easy">Easy Pizzy</button>
+                    <button id="medium" value="medium">Medium Shmedium</button>
+                    <button id="hard" value="hard">Hard - Oh My God!</button>
                 </div>
-
+                
             </div>
-
-
+            
+            
         </div>
     </div>
+    <script src="JS/jQuery3.3.1.js"></script>
+    <script src="JS/main.js"></script>
+    <script src="JS/gameMechanics.js"></script>
 </body>
 
 </html>
