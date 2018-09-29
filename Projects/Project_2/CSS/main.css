@@ -11,8 +11,9 @@ body {
 }
 
 #pythonPhoto{
-    float: left;
-    margin-top: 50px;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
 }
 #mainDisplay{
     width: 600px;
@@ -20,6 +21,8 @@ body {
     margin: 0 auto;
     margin-top: 50px;
     background-color: transparent;
+    display: flex;
+    flex-direction: row;
 }
 /* #endregion General */
 
@@ -42,21 +45,10 @@ body {
     grid-gap: 10px;
     align-content: center;
     justify-content: center;
-}
-#userName{
-    height: 40px;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    font-size: 24px;
-    font-weight: 900;
-    text-align: center;
-    color: #20c20e;
-    background-color: #e6f58e;
-}
-#difficultyNav{
     margin-top: 10px;
     margin-bottom: 50px;
 }
+
 button{
     padding: 0px;
     width: 150px;
@@ -71,11 +63,7 @@ button{
     margin: 0 auto;
     transition: 0.3s;
 }
-#backBtn, 
-#updateBtn {
-    margin-top: 20px;
-    float: left;
-}
+
 button:hover{
     background-color: #f5f38e;
     border-color: #f5f38e;
@@ -86,21 +74,21 @@ button:hover{
 
 /* #endregion User Interface */
 
-#playGround {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
+#canvas {
+    background-color: black;
     display: none;
+    opacity: 0.7;
+    border: 1px solid #f5f38e;
 }
 
-#menu{
-    width:100%; 
-    height:100%; 
+#menu,
+#void {
+    width:400px; 
+    height:400px; 
     background-color:transparent; 
-    display: none;
-}
-#menu > table {
-    width: 600px;
+    display: flex;
+    flex-direction: column;
+    float: left;
 }
 #menu > div {
     margin-top: 30px;
