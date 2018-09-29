@@ -11,33 +11,111 @@
 
 <body>
     <div class="container">
-        
+
         <h1>Welcome to Python-Hub!</h1>
         <img src="images/Python.jpg" alt="" width="400px" height="400px" id="pythonPhoto">
-        
-        <div class="mainDisplay">
-            
-            <canvas id="playGround"></canvas>
+
+        <div id="mainDisplay">
+
             <div id="userInterface">
-                
+                <Button id="menuBtn">Menu</Button>
                 Please enter your name
                 <input id="userName" type="text">
-                
+
                 Please Choose Difficulty
                 <div id="difficultyNav">
                     <button id="easy" value="easy">Easy Pizzy</button>
                     <button id="medium" value="medium">Medium Shmedium</button>
                     <button id="hard" value="hard">Hard - Oh My God!</button>
                 </div>
-                
+
+                <button id="start">Start!</button>
             </div>
-            
-            
+
+            <canvas id="playGround"></canvas>
+
+            <div id="menu">
+
+                <div>Menu</div>
+                <table>
+                    <tr>
+                        <th>Snake Length</th>
+                        <td>
+                            <select id="snakeLength">
+                                <option value="snakeLength1" selected>1</option>
+                                <option value="snakeLength2">2</option>
+                                <option value="snakeLength3">3</option>
+                                <option value="snakeLength4">4</option>
+                                <option value="snakeLength5">5</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>Canvas Size</span> </th>
+                        <td>
+                            <select type="text" id="canvasSize">
+                                <option value="smallCanvas">Small</option>
+                                <option value="mediumCanvas" selected>Medium</option>
+                                <option value="largeCanvas">Large</option>
+                            </select>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>Number of Apples</th>
+                        <td>
+                            <select type="text" id="appleNum">
+                                <option value="appleNum1" selected>1</option>
+                                <option value="appleNum2">2</option>
+                                <option value="appleNum3">3</option>
+                                <option value="appleNum4">4</option>
+                                <option value="appleNum5">5</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Speed For Novice Level</th>
+                        <td>
+                            <select id="spdNovice">
+                                <option value="spdNovice1" selected>Level 1</option>
+                                <option value="spdNovice2">Level 2</option>
+                                <option value="spdNovice3">Level 3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Speed For Medium Level</th>
+                        <td>
+                            <select id="spdMedium">
+                                <option value="spdMedium1" selected>Level 1</option>
+                                <option value="spdMedium2">Level 2</option>
+                                <option value="spdMedium3">Level 3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Speed For Hard Level</th>
+                        <td>
+                            <select type="text" id="spdHard">
+                                <option value="spdHard1" selected>Level 1</option>
+                                <option value="spdHard2">Level 2</option>
+                                <option value="spdHard3">Level 3</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <button id="backBtn">Back</button>
+            </div>
+
+
         </div>
     </div>
     <script src="JS/jQuery3.3.1.js"></script>
     <script src="JS/main.js"></script>
     <script src="JS/gameMechanics.js"></script>
+    <!-- <script src="JS/test/Draw.js"></script> -->
+    <!-- <script src="JS/test/Settings.js"></script> -->
+    <!-- <script src="JS/test/App.js"></script> -->
 </body>
 
 </html>
