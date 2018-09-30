@@ -176,20 +176,18 @@ class Apples {
         this.quantity = quantity;
     }
     drawFood() {
-        context.fillStyle = 'red';
-        context.strokestyle = 'darkred';
-        context.fillRect(foodX, foodY, 20, 20);
-        context.strokeRect(foodX, foodY, 20, 20);
+            context.fillStyle = 'red';
+            context.strokestyle = 'darkred';
+            context.fillRect(foodX, foodY, 20, 20);
+            context.strokeRect(foodX, foodY, 20, 20);        
     }
     createFood() {
-        for (var i = 0; i > this.quantity; i--) {
+        foodX = randomTen(0, canvas.width - 20);
+        foodY = randomTen(0, canvas.height - 20);
+        snake.forEach(function isOnSnake(part) {
+            if (part.x == foodX && part.y == foodY) createFood();
+        });
 
-            foodX = randomTen(0, canvas.width - 20);
-            foodY = randomTen(0, canvas.height - 20);
-            snake.forEach(function isOnSnake(part) {
-                if (part.x == foodX && part.y == foodY) createFood();
-            });
-        }
     }
 
 }
@@ -207,6 +205,7 @@ btns.forEach(function (button) {
         var buttonValue = this.value.toString();
 
         getInfo();
+        setInfo();
         checkDifficulty(buttonValue);
         console.log(spd);
         startTheGame();
@@ -222,6 +221,7 @@ function startTheGame() {       // Creating the function to fade the User interf
     fadeUI();
 
     let python = new Snake(snakeLength);
+    
     let apples = new Apples(appleNum);
     python.createSnake();
     python.drawSnake();
@@ -232,7 +232,7 @@ function startTheGame() {       // Creating the function to fade the User interf
 
     function main() {
         if (didGameEnd()) {
-            alert("Game Over! Your score is: " + score);
+            alert("Game Over! Your score is: " + score);            
             window.location = 'https://manjaparidze.github.io/Projects/Project_2/index.html';
             return;
         }
@@ -256,10 +256,18 @@ function getInfo() {
     spdNovice = parseInt(document.getElementById("spdNovice").value);
     spdMedium = parseInt(document.getElementById("spdMedium").value);
     spdHard = parseInt(document.getElementById("spdHard").value);
-
-
 }
-
+function setInfo() {
+    localStorage.setItem('snakeLength', snakeLength);
+    // console.log(snakeLength);
+    var x = localStorage.getItem('snakeLength');
+    console.log(x);
+    localStorage.setItem('canvasSize', canvasSize);
+    localStorage.setItem('appleNum', appleNum);
+    localStorage.setItem('spdNovice', spdNovice);
+    localStorage.setItem('spdMedium', spdMedium);
+    localStorage.setItem('spdHard', spdHard);
+}
 
 function fadeUI() {
     $(userInterface).fadeOut();
