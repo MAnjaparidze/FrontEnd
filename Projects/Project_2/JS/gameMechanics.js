@@ -122,6 +122,13 @@ class Snake {
         const didEatFood = snake[0].x === foodX && snake[0].y === foodY;
         if (didEatFood) {
             // Increase score
+            function createFood() {
+                foodX = randomTen(0, canvas.width - 20);
+                foodY = randomTen(0, canvas.height - 20);
+                snake.forEach(function isOnSnake(part) {
+                    if (part.x == foodX && part.y == foodY) createFood();
+                });
+            }
             createFood();
             score += 10;
             // Display score on screen
@@ -167,8 +174,24 @@ class Snake {
 class Apples {
     constructor(quantity) {
         this.quantity = quantity;
-
     }
+    drawFood() {
+        context.fillStyle = 'red';
+        context.strokestyle = 'darkred';
+        context.fillRect(foodX, foodY, 20, 20);
+        context.strokeRect(foodX, foodY, 20, 20);
+    }
+    createFood() {
+        for (var i = 0; i > this.quantity; i--) {
+
+            foodX = randomTen(0, canvas.width - 20);
+            foodY = randomTen(0, canvas.height - 20);
+            snake.forEach(function isOnSnake(part) {
+                if (part.x == foodX && part.y == foodY) createFood();
+            });
+        }
+    }
+
 }
 
 class User {
@@ -199,23 +222,24 @@ function startTheGame() {       // Creating the function to fade the User interf
     fadeUI();
 
     let python = new Snake(snakeLength);
+    let apples = new Apples(appleNum);
     python.createSnake();
     python.drawSnake();
     main();
-    createFood();
+    apples.createFood();
 
     document.addEventListener("keydown", python.changeDirection);
 
     function main() {
         if (didGameEnd()) {
             alert("Game Over! Your score is: " + score);
-            // window.location = 'https://manjaparidze.github.io/Projects/Project_2/index.html';
+            window.location = 'https://manjaparidze.github.io/Projects/Project_2/index.html';
             return;
         }
 
         setTimeout(function onTick() {
             python.clearCanvas();
-            drawFood();
+            apples.drawFood();
             python.moveSnake();
             python.drawSnake();
             // Call main again
@@ -262,33 +286,20 @@ function didGameEnd() {
     return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall;
 }
 
-function createFood() {
-    foodX = this.randomTen(0, canvas.width - 20);
-    foodY = this.randomTen(0, canvas.height - 20);
-    snake.forEach(function isOnSnake(part) {
-        if (part.x == foodX && part.y == foodY) createFood();
-    });
-}
 
-function drawFood() {
-    context.fillStyle = 'red';
-    context.strokestyle = 'darkred';
-    context.fillRect(foodX, foodY, 20, 20);
-    context.strokeRect(foodX, foodY, 20, 20);
-}
 
 function checkDifficulty(btnVal) {
     if (btnVal == "easy") {
-        spd = 210 - spdNovice*10;
+        spd = 210 - spdNovice * 10;
     }
 
     else if (btnVal == "medium") {
-        spd = 150 - spdMedium*10;
+        spd = 150 - spdMedium * 10;
         console.log(spd);
     }
 
     else if (btnVal == "hard") {
-        spd = 120 - spdHard*10;
+        spd = 120 - spdHard * 10;
     }
 }
 
