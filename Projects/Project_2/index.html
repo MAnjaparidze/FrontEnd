@@ -22,11 +22,16 @@
                     <th>Snake Length</th>
                     <td>
                         <select id="snakeLength">
-                            <option value="snakeLength1" selected>1</option>
-                            <option value="snakeLength2">2</option>
-                            <option value="snakeLength3">3</option>
-                            <option value="snakeLength4">4</option>
-                            <option value="snakeLength5">5</option>
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
                         </select>
                     </td>
                 </tr>
@@ -34,9 +39,9 @@
                     <th><span>Canvas Size</span> </th>
                     <td>
                         <select type="text" id="canvasSize">
-                            <option value="smallCanvas">Small</option>
-                            <option value="mediumCanvas" selected>Medium</option>
-                            <option value="largeCanvas">Large</option>
+                            <option value="small">Small</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="large">Large</option>
                         </select>
                     </td>
 
@@ -45,11 +50,16 @@
                     <th>Number of Apples</th>
                     <td>
                         <select type="text" id="appleNum">
-                            <option value="appleNum1" selected>1</option>
-                            <option value="appleNum2">2</option>
-                            <option value="appleNum3">3</option>
-                            <option value="appleNum4">4</option>
-                            <option value="appleNum5">5</option>
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
                         </select>
                     </td>
                 </tr>
@@ -57,9 +67,9 @@
                     <th>Speed For Novice Level</th>
                     <td>
                         <select id="spdNovice">
-                            <option value="spdNovice1" selected>Level 1</option>
-                            <option value="spdNovice2">Level 2</option>
-                            <option value="spdNovice3">Level 3</option>
+                            <option value="1" selected>Level 1</option>
+                            <option value="2">Level 2</option>
+                            <option value="3">Level 3</option>
                         </select>
                     </td>
                 </tr>
@@ -67,9 +77,9 @@
                     <th>Speed For Medium Level</th>
                     <td>
                         <select id="spdMedium">
-                            <option value="spdMedium1" selected>Level 1</option>
-                            <option value="spdMedium2">Level 2</option>
-                            <option value="spdMedium3">Level 3</option>
+                            <option value="1" selected>Level 1</option>
+                            <option value="2">Level 2</option>
+                            <option value="3">Level 3</option>
                         </select>
                     </td>
                 </tr>
@@ -77,9 +87,9 @@
                     <th>Speed For Hard Level</th>
                     <td>
                         <select type="text" id="spdHard">
-                            <option value="spdHard1" selected>Level 1</option>
-                            <option value="spdHard2">Level 2</option>
-                            <option value="spdHard3">Level 3</option>
+                            <option value="1" selected>Level 1</option>
+                            <option value="2">Level 2</option>
+                            <option value="3">Level 3</option>
                         </select>
                     </td>
                 </tr>
@@ -91,19 +101,24 @@
                 <img src="../Project_2/Images/Python.jpg" alt="" width="400px" height="400px" id="pythonPhoto">
                 <p>Choose Level:</p>
                 <nav id="difficultyNav">
-                    <button id="easy" value="easy">Easy Pizzy</button>
-                    <button id="medium" value="medium">Medium Shmedium</button>
-                    <button id="hard" value="hard">Hard - Oh My God!</button>
+                    <button id="easy" value="easy">Novice</button>
+                    <button id="medium" value="medium">Medium</button>
+                    <button id="hard" value="hard">Hard</button>
                 </nav>
 
             </div>
-            <canvas id="canvas" width="600px" height="500px"></canvas>
+            <div id="canvasDiv">
+                <canvas id="canvas" width="600px" height="500px"></canvas>
+                <div id="scores">
+                    <p id="currentScore">Score: </p>
+                    <p id="highestScore">HighScore: </p>
+                </div>
+            </div>
         </div>
         
 
     </div>
     <script src="JS/jQuery3.3.1.js"></script>
-    <script src="JS/main.js"></script>
     <script src="JS/gameMechanics.js"></script>
 </body>
 

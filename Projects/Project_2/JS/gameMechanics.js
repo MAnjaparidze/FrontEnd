@@ -1,17 +1,90 @@
-
+var userInterface = document.getElementById("userInterface");
+var menu = document.getElementById("menu");
+var mainDisplay = document.getElementById("mainDisplay");
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext('2d');
+
+var btnEasy = document.getElementById("easy");
+var btnMedium = document.getElementById("medium");
+var btnHard = document.getElementById("hard");
+
+var btns = [btnEasy, btnMedium, btnHard];
+
+var snakeLength;
+var canvasSize;
+var appleNum;
+var spdNovice;
+var spdMedium;
+var spdHard;
 var score = 0;
 var food;
-var dx = 10;
+var dx = 20;
 var dy = 0;
-var x = 10;
-var y = 10;
-var foodX = this.randomTen(0, canvas.width - 10);
-var foodY = this.randomTen(0, canvas.height - 10);
+var x = 20;
+var y = 20;
+var foodX = this.randomTen(0, canvas.width - 20);
+var foodY = this.randomTen(0, canvas.height - 20);
 var snake = [];
-var score = 0;
+var spd;
 
+//#region classes
+class Canvas {
+    constructor(size) {
+        this.size = size;
+    }
+
+    createCanvas() {
+        var canvasDiv = document.createElement("div");
+        var canvas = document.createElement("canvas");
+        var scoresDiv = document.createElement("div");
+        var currScoreP = document.createElement("p");
+        var highScoreP = document.createElement("p");
+
+        canvasDiv.setAttribute("id", "canvasDiv");
+        canvas.setAttribute("id", "canvas");
+        scoresDiv.setAttribute("id", "scores");
+        currScoreP.setAttribute("id", "currentScore");
+        highScoreP.setAttribute("id", "highestScore");
+
+        currScoreP.innerText = "Score: ";
+        highScoreP.innerText = "HighScore: ";
+
+        scoresDiv.appendChild(currScoreP);
+        scoresDiv.appendChild(highScoreP);
+        canvasDiv.appendChild(canvas);
+        canvasDiv.appendChild(scoresDiv);
+        mainDisplay.appendChild(canvasDiv);
+
+
+        canvas.style.width = this.width;
+        canvas.style.height = this.height;
+        if (this.size == "small") {
+            this.smallSize();
+
+        }
+        else if (this.size == "medium") {
+            this.mediumSize();
+        }
+        else if (this.size == "large") {
+            this.largeSize();
+        }
+    }
+
+    smallSize() {
+        canvas.style.width = "300px";
+        canvas.style.height = "300px";
+    }
+
+    mediumSize() {
+        canvas.style.width = "400px";
+        canvas.style.height = "400px";
+    }
+
+    largeSize() {
+        canvas.style.width = "600px";
+        canvas.style.height = "500px";
+    }
+}
 class Snake {
     constructor(length) {
         this.length = length;
@@ -20,7 +93,7 @@ class Snake {
         var snakeSize = this.length;
 
         for (var i = snakeSize; i > 0; i--) {           // Assigns the position for each snake part so illusion of snake body is created
-            snake.push({ x: i * 10, y: 10 });
+            snake.push({ x: i * 20, y: 20 });
         }
     }
     drawSnake() {
@@ -52,7 +125,7 @@ class Snake {
             createFood();
             score += 10;
             // Display score on screen
-            // document.getElementById('score').innerHTML = score;
+            document.getElementById("currentScore").innerHTML = "Score: " + score;
             // Generate new food location
         } else {
             // Remove the last part of snake body
@@ -66,26 +139,26 @@ class Snake {
         const DOWN_KEY = 40;
 
         const keyPressed = event.keyCode;
-        const goingUp = dy === -10;
-        const goingDown = dy === 10;
-        const goingRight = dx === 10;
-        const goingLeft = dx === -10;
+        const goingUp = dy === -20;
+        const goingDown = dy === 20;
+        const goingRight = dx === 20;
+        const goingLeft = dx === -20;
 
         if (keyPressed === LEFT_KEY && !goingRight) {
-            dx = -10;
+            dx = -20;
             dy = 0;
         }
-        if (keyPressed === UP_KEY && !goingUp) {
+        if (keyPressed === UP_KEY && !goingDown) {
             dx = 0;
-            dy = -10;
+            dy = -20;
         }
         if (keyPressed === RIGHT_KEY && !goingLeft) {
-            dx = 10;
+            dx = 20;
             dy = 0;
         }
-        if (keyPressed === DOWN_KEY && !goingDown) {
+        if (keyPressed === DOWN_KEY && !goingUp) {
             dx = 0;
-            dy = 10;
+            dy = 20;
         }
     }
 }
@@ -96,37 +169,47 @@ class Apples {
         this.quantity = quantity;
 
     }
-
-
-
 }
 
+class User {
+    constructor(score, difficulty) {
+        this.name = score;
+        this.difficulty = difficulty;
+    }
+}
+//#endregion classes
 
 btns.forEach(function (button) {
     button.addEventListener('click', function () {
+        var buttonValue = this.value.toString();
+
+        getInfo();
+        checkDifficulty(buttonValue);
+        console.log(spd);
         startTheGame();
     })
 });
 
+//#region functions
 function startTheGame() {       // Creating the function to fade the User interface and open the game
+
+    let canvas = new Canvas(canvasSize);
+    canvas.createCanvas();
 
     fadeUI();
 
-    let python = new Snake(2);
+    let python = new Snake(snakeLength);
     python.createSnake();
     python.drawSnake();
-
     main();
-
     createFood();
-
 
     document.addEventListener("keydown", python.changeDirection);
 
     function main() {
         if (didGameEnd()) {
-            alert("Game Over!");
-            // window.location = 
+            alert("Game Over! Your score is: " + score);
+            // window.location = 'https://manjaparidze.github.io/Projects/Project_2/index.html';
             return;
         }
 
@@ -137,25 +220,34 @@ function startTheGame() {       // Creating the function to fade the User interf
             python.drawSnake();
             // Call main again
             main();
-        }, 100)
+        }, spd)
     }
 }
 
+
+function getInfo() {
+    snakeLength = parseInt(document.getElementById("snakeLength").value);
+    canvasSize = document.getElementById("canvasSize").value.toString();
+    appleNum = parseInt(document.getElementById("appleNum").value);
+    spdNovice = parseInt(document.getElementById("spdNovice").value);
+    spdMedium = parseInt(document.getElementById("spdMedium").value);
+    spdHard = parseInt(document.getElementById("spdHard").value);
+
+
+}
 
 
 function fadeUI() {
     $(userInterface).fadeOut();
     setInterval(function () {
+        $("#canvasDiv").fadeIn();
         $(canvas).fadeIn();
     }, 1000);
 }
 
-function createPython(length) {
-
-}
 
 function randomTen(min, max) {
-    return Math.round((Math.random() * (max - min) + min) / 10) * 10;
+    return Math.round((Math.random() * (max - min) + min) / 20) * 20;
 }
 
 function didGameEnd() {
@@ -171,8 +263,8 @@ function didGameEnd() {
 }
 
 function createFood() {
-    foodX = this.randomTen(0, canvas.width - 10);
-    foodY = this.randomTen(0, canvas.height - 10);
+    foodX = this.randomTen(0, canvas.width - 20);
+    foodY = this.randomTen(0, canvas.height - 20);
     snake.forEach(function isOnSnake(part) {
         if (part.x == foodX && part.y == foodY) createFood();
     });
@@ -181,6 +273,23 @@ function createFood() {
 function drawFood() {
     context.fillStyle = 'red';
     context.strokestyle = 'darkred';
-    context.fillRect(foodX, foodY, 10, 10);
-    context.strokeRect(foodX, foodY, 10, 10);
+    context.fillRect(foodX, foodY, 20, 20);
+    context.strokeRect(foodX, foodY, 20, 20);
 }
+
+function checkDifficulty(btnVal) {
+    if (btnVal == "easy") {
+        spd = 210 - spdNovice*10;
+    }
+
+    else if (btnVal == "medium") {
+        spd = 150 - spdMedium*10;
+        console.log(spd);
+    }
+
+    else if (btnVal == "hard") {
+        spd = 120 - spdHard*10;
+    }
+}
+
+//#endregion functions
