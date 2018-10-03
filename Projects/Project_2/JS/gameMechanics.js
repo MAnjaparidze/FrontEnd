@@ -1,31 +1,31 @@
-var userInterface = document.getElementById("userInterface");
-var menu = document.getElementById("menu");
-var mainDisplay = document.getElementById("mainDisplay");
-var canvas = document.getElementById("canvas");
-var context = canvas.getContext('2d');
+let userInterface = document.getElementById("userInterface");
+let menu = document.getElementById("menu");
+let mainDisplay = document.getElementById("mainDisplay");
+let canvas = document.getElementById("canvas");
+let context = canvas.getContext('2d');
 
-var btnEasy = document.getElementById("easy");
-var btnMedium = document.getElementById("medium");
-var btnHard = document.getElementById("hard");
+let btnEasy = document.getElementById("easy");
+let btnMedium = document.getElementById("medium");
+let btnHard = document.getElementById("hard");
 
-var btns = [btnEasy, btnMedium, btnHard];
+let btns = [btnEasy, btnMedium, btnHard];
 
-var snakeLength;
-var canvasSize;
-var appleNum;
-var spdNovice;
-var spdMedium;
-var spdHard;
-var score = 0;
-var food;
-var dx = 20;
-var dy = 0;
-var x = 20;
-var y = 20;
-var foodX = this.randomTen(0, canvas.width - 20);
-var foodY = this.randomTen(0, canvas.height - 20);
-var snake = [];
-var spd;
+let snakeLength;
+let canvasSize;
+let appleNum;
+let spdNovice;
+let spdMedium;
+let spdHard;
+let score = 0;
+let food;
+let dx = 20;
+let dy = 0;
+let x = 20;
+let y = 20;
+let foodX = this.randomTen(0, canvas.width - 20);
+let foodY = this.randomTen(0, canvas.height - 20);
+let snake = [];
+let spd;
 
 //#region classes
 class Canvas {
@@ -85,6 +85,7 @@ class Canvas {
         canvas.style.height = "500px";
     }
 }
+
 class Snake {
     constructor(length) {
         this.length = length;
