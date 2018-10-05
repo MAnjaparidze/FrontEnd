@@ -103,9 +103,7 @@ tr, td, th, table,
 #snakeLength,
 #canvasSize,
 #appleNum,
-#spdNovice,
-#spdMedium,
-#spdHard,
+#speed,
 #currentScore,
 #highestScore {
     font-size: 20px;

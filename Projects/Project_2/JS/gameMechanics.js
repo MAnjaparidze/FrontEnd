@@ -7,15 +7,14 @@ let context = canvas.getContext('2d');
 let btnEasy = document.getElementById("easy");
 let btnMedium = document.getElementById("medium");
 let btnHard = document.getElementById("hard");
+let btnStart = document.getElementById("startGame");
 
-let btns = [btnEasy, btnMedium, btnHard];
+let btns = [btnEasy, btnMedium, btnHard, btnStart];
 
 let snakeLength;
 let canvasSize;
 let appleNum;
-let spdNovice;
-let spdMedium;
-let spdHard;
+let speed;
 let score = 0;
 let food;
 let dx = 20;
@@ -25,7 +24,8 @@ let y = 20;
 let foodX = this.randomTen(0, canvas.width - 20);
 let foodY = this.randomTen(0, canvas.height - 20);
 let snake = [];
-let spd;
+
+updateMenu();
 
 //#region classes
 class Canvas {
@@ -177,10 +177,10 @@ class Apples {
         this.quantity = quantity;
     }
     drawFood() {
-            context.fillStyle = 'red';
-            context.strokestyle = 'darkred';
-            context.fillRect(foodX, foodY, 20, 20);
-            context.strokeRect(foodX, foodY, 20, 20);        
+        context.fillStyle = 'red';
+        context.strokestyle = 'darkred';
+        context.fillRect(foodX, foodY, 20, 20);
+        context.strokeRect(foodX, foodY, 20, 20);
     }
     createFood() {
         foodX = randomTen(0, canvas.width - 20);
@@ -193,25 +193,25 @@ class Apples {
 
 }
 
-class User {
-    constructor(score, difficulty) {
-        this.name = score;
-        this.difficulty = difficulty;
-    }
-}
 //#endregion classes
 
 btns.forEach(function (button) {
     button.addEventListener('click', function () {
         var buttonValue = this.value.toString();
-
-        getInfo();
-        setInfo();
-        checkDifficulty(buttonValue);
-        console.log(spd);
-        startTheGame();
+        if (buttonValue == 'start') {
+            getInfo();
+            setInfo();
+            startTheGame();
+        }
+        else {
+            checkDifficulty(buttonValue);
+            getInfo();
+            setInfo();
+            startTheGame();
+        }
     })
 });
+
 
 //#region functions
 function startTheGame() {       // Creating the function to fade the User interface and open the game
@@ -222,7 +222,7 @@ function startTheGame() {       // Creating the function to fade the User interf
     fadeUI();
 
     let python = new Snake(snakeLength);
-    
+
     let apples = new Apples(appleNum);
     python.createSnake();
     python.drawSnake();
@@ -231,10 +231,16 @@ function startTheGame() {       // Creating the function to fade the User interf
 
     document.addEventListener("keydown", python.changeDirection);
 
+    if (didGameEnd()) {
+        alert("Game Over! Your score is: " + score);
+        location.reload();
+        return;
+    }
+
     function main() {
         if (didGameEnd()) {
-            alert("Game Over! Your score is: " + score);            
-            window.location = 'https://manjaparidze.github.io/Projects/Project_2/index.html';
+            alert("Game Over! Your score is: " + score);
+            location.reload();
             return;
         }
 
@@ -245,7 +251,7 @@ function startTheGame() {       // Creating the function to fade the User interf
             python.drawSnake();
             // Call main again
             main();
-        }, spd)
+        }, speed)
     }
 }
 
@@ -254,20 +260,13 @@ function getInfo() {
     snakeLength = parseInt(document.getElementById("snakeLength").value);
     canvasSize = document.getElementById("canvasSize").value.toString();
     appleNum = parseInt(document.getElementById("appleNum").value);
-    spdNovice = parseInt(document.getElementById("spdNovice").value);
-    spdMedium = parseInt(document.getElementById("spdMedium").value);
-    spdHard = parseInt(document.getElementById("spdHard").value);
+    speed = parseInt(document.getElementById("speed").value);
 }
 function setInfo() {
     localStorage.setItem('snakeLength', snakeLength);
-    // console.log(snakeLength);
-    var x = localStorage.getItem('snakeLength');
-    console.log(x);
     localStorage.setItem('canvasSize', canvasSize);
     localStorage.setItem('appleNum', appleNum);
-    localStorage.setItem('spdNovice', spdNovice);
-    localStorage.setItem('spdMedium', spdMedium);
-    localStorage.setItem('spdHard', spdHard);
+    localStorage.setItem('speed', speed);
 }
 
 function fadeUI() {
@@ -299,17 +298,27 @@ function didGameEnd() {
 
 function checkDifficulty(btnVal) {
     if (btnVal == "easy") {
-        spd = 210 - spdNovice * 10;
+        speed = 500;
+        localStorage.setItem('speed', speed);
     }
 
     else if (btnVal == "medium") {
-        spd = 150 - spdMedium * 10;
-        console.log(spd);
+        speed = 300;
+        localStorage.setItem('speed', speed);
     }
 
     else if (btnVal == "hard") {
-        spd = 120 - spdHard * 10;
+        speed = 100;
+        localStorage.setItem('speed', speed);
     }
+}
+
+function updateMenu() {
+    document.querySelector("#snakeLength").value = localStorage.getItem('snakeLength');
+    document.querySelector("#canvasSize").value = localStorage.getItem('canvasSize');
+    document.querySelector("#appleNum").value = localStorage.getItem('appleNum');
+    document.querySelector("#speed").value = localStorage.getItem('speed');
+
 }
 
 //#endregion functions
