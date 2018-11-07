@@ -1,4 +1,6 @@
 {
     "workbench.colorTheme": "Atom One Dark",
-    "terminal.explorerKind": "external"
+    "terminal.explorerKind": "external",
+    "editor.fontSize": 16,
+
 }

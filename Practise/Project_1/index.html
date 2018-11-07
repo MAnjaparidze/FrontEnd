@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <title>Project#1</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="flex-left ">
+            <h1 class="header__logo flex-align-center"><i class="fas fa-bars"></i></h1>
+            <div class="header__tech flex-align-center">TechHub</div>
+        </div>
+        <div class=" header__buttons flex-right flex-align-center">
+            <div class="header__add-std flex-align-center" id="addStudentBtn"><button>სტუდენტის დამატება</button></div>
+            <div class="header__delete-std flex-align-center" id="deleteStudentBtn"><button>სტუდენტის წაშლა</button></div>
+        </div>
+    </header>
+    
+    <main class="main">
+        <aside class="aside-left">
+            <ul class="aside-left__list">
+                <li class="aside-left__list__item flex-align-center">სტუდენტების რაოდენობა</li><span class="flex-align-center" id="studNum">10</span>
+                <li class="aside-left__list__item flex-align-center">საშუალო ქულა</li><span class="flex-align-center">7</span>
+            </ul>
+        </aside>
+        <div class="content">
+            <div class="content__center">
+                <div id="marking_Table--Header">
+                    <div class="headerBox">სტუდენტები</div>
+                    <div class="headerBox">თარიღი</div>
+                    <div class="headerBox">თარიღი</div>
+                    <div class="headerBox">თარიღი</div>
+                    <div class="headerBox">თარიღი</div>
+                    <div class="headerBox">თარიღი</div>
+                </div>
+
+                <div>
+                    <div>
+                        <ul id="studentList">
+                            
+                        </ul>
+                    </div>
+
+                    <div>
+                        <table id="markingTable">
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
