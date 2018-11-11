@@ -9,10 +9,12 @@
     },
     {
         "name": "Dolor Sit Amet",
+        "done": true,
         "id": 2
     },
     {
         "name": "Javascript (ES6)",
+        "done": false,
         "id": 3
     }
 ]

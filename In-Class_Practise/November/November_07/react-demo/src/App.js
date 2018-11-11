@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Loader from './Components/Loader';
+import Search from './Components/Search';
+import List from './Components/List';
 
+const url = 'https://hn.algolia.com/api/v1/search?query='
 class App extends Component {
+  state = {
+    query: 'javascript',
+    url,
+    data: null,
+    isLoading: true,
+  }
+  componentDidMount() {
+    fetch( `${url}${this.state.query}` )
+      .then( data => data.json() )
+      .then( data => {
+        this.setState( {data, isLoading: false} )
+        console.log(this.state.data);
+      } )
+      .catch(err => console.log(err))
+  }
+  onSearchhandler = (e) => {
+    this.setState({query: e.target.value});
+  }
+  onSubmit = (e) => {
+    console.log(e.target.children)
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="wrapper">
+        <Search />
+        { this.state.isLoading && <Loader /> }
+        { !this.state.isLoading && <List limit={10} data={this.state.data.hits} /> }
       </div>
     );
   }
