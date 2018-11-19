@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira sans condenseed', sans-serif;
+    color: white;
+}
+html,
+body,
+#container {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../../img/546508.jpg');
+    background-repeat: no-repeat;
+    /* background-color: grey; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+#mainNav {
+    width: 1150px;
+    height: 150px;
+}
+
+#mainNav > ul {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    font-weight: 900;
+}
+
+#mainNav > ul > li > a {
+    display: block;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s
+}
+#mainNav > ul > li a:hover{
+    cursor: pointer;
+    color: rgba(250, 235, 215, 0.616);
+}
+
+#tingoHeader {
+    display: block;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+    width: 300px;
+    text-align: center;
+}
+#travello {
+    font-family: 'Lobster', cursive;
+    font-size: 88px;
+    font-weight: 900;
+    text-align: center;
+}
+
+#moto {
+    padding: 20px;
+    width: 400px;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+}
+
+#booking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    border-radius: 64px;
+    text-align: center;
+    color: black;
+    font-weight: 700;
+    background-color: white;
+    margin-top: 300px;
+    transition: 0.3s;
+}
+
+#booking:hover {
+    cursor: pointer;
+    background-color: rgba(250, 235, 215, 0.616);
+}
+
+footer {
+    background-image: url('../../img/PYwy6gH.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+#footerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#line{
+    height: 4px;
+    width: 50px;
+    background-color: #032057;
+    margin-top: 120px;
+    margin-bottom: 30px;
+}
+
+#footerContainer > span {
+    font-size: 46px;
+    color: #032057;
+    font-weight: 800;
+    padding: 3px;
+    font-variant: normal;
+}
+
+#mailInput {
+    margin-top: 40px;
+    width: 45%;
+    height: 50px;
+    position: relative;
+}
+
+#mailInput > input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    border-color: white;
+    background-color: white !important;
+    color: black;
+    padding: 20px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    box-shadow: 2px 4px #4e5e7d2f;
+}
+
+#subscribeBtn {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    right: 0px;
+    background-color: #54d7b7;
+    width: 30%;
+    border-radius: 50px;
+    border-color: white;
+    height: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    transition: 300ms;
+}
+
+#subscribeBtn:hover {
+    cursor: pointer;
+    background-color: #54d7b6cb;
+}
+
+#footerNav{
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 70px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#footerNav > div {
+    /* background-color: rgba(0, 0, 0, 0.418); */
+    padding: 50px;
+    width: wrap;
+    text-align: left;
+}
+#footerNav > div > span:first-child{
+    color: #032057;
+    font-weight: 900;
+    font-size: 22px;
+}
+
+#footerNav > div > span > a {
+    text-decoration: none;
+    color: #4e5e7d;
+    transition: 300ms;
+}
+#footerNav > div > span > a:hover {
+    color: #4e5e7dbd;
+}
+
+#socialMediaNav {
+    width: 500px;
+}
+
+#socialMediaList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+}
+#footerLinks {
+    flex-direction: column;
+    align-items: center;
+}
+#footerLinks > div:first-child {
+    font-family: 'Lobster', cursive;
+    font-size: 44px;
+    font-weight: 500px;
+    color: #032057;
+    margin-bottom: 20px;
+}
+#socialMediaList > span {
+    color: #032057;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 50px;
+}
+#socialMediaList > div {
+    display: flex;
+    background-color: white;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms;
+}
+
+#socialMediaList > div:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.425);
+}
+#socialMediaList > div > a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #032057;
+    transition: 300ms;
+}
+#socialMediaList > div > a:hover{
+    color: #032057be;
+}
